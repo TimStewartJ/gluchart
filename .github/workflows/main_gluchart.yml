@@ -9,6 +9,9 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  ZIP_NAME: "app-release.zip"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,16 +26,19 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd gluchart-react/
           npm install
           npm run build --if-present
           npm run test --if-present
+        working-directory: gluchart-react
+
+      - name: Zip artifact to upload
+        run: zip -r ${{ env.ZIP_NAME }} .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: ${{ env.ZIP_NAME }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -54,4 +60,4 @@ jobs:
           app-name: 'gluchart'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_91F7EDB0F59C4BECBC62B62C7555564C }}
-          package: .
+          package: ${{ env.ZIP_NAME }}
