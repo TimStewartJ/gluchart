@@ -14,7 +14,7 @@ export default function Home() {
             <hr className="divider"></hr>
 
             <label for="fname" className="grams">insert grams</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name.."></input>
+            <input type="text" id="fname" name="firstname" className="grams-input"></input>
         </div>
     );
 }
