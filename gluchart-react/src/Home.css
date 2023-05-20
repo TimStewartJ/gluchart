@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+}
+
+.home-div {
+    background-color: var(--sage-green);
+    margin: 30px;
+}
+
+.icon {
+    text-align: right; 
+}
+
+h2 {
+    font-family: 'Red Hat Display';
+    color: white;
+}
+
+.blood-sugar {
+    text-align: center;
+}
+.thin {
+    color: white;
+    font-size: 18px;
+    font-family: articulat-cf, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+}
+
+.normal {
+    font-family: 'DM Sans';
+    color: white;
+    font-size: 64px;
+    font-weight: 500;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}

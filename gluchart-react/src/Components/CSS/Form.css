@@ -1,0 +1,23 @@
+.form {
+    background: white;
+    height: 100%;
+}
+
+.top-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.divider {
+    width: 323px;
+    height: 0px;
+    border: 1px solid rgba(87, 115, 131, 0.5);
+}
+
+.grams {
+    font-family: articulat-cf, sans-serif;
+    color: blue;
+    font-size: 18px;
+    font-weight: 400px;
+}

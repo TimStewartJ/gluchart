@@ -1,0 +1,16 @@
+.tab {
+    font-family: 'Red Hat Display';
+    font-weight: 300;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--turqoise);
+    width: 90px;
+    height: 36px;
+    border: none;
+    border-radius: 20px;
+}
+
+.tab:hover {
+    background-color: var(--turqoise);
+    color: white;
+}
