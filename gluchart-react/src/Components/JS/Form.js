@@ -122,7 +122,7 @@ export default function Form(props)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (activeButton == 'Glucose') {
+    if (activeButton === 'Glucose') {
       props.input.data.push([+glucoseValue, 0, 0, 0, 0])
       makePrediction(props.input.data)
       props.setMasterInput(props.input)
