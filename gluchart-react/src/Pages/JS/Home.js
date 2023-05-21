@@ -7,9 +7,14 @@ import Navbar from '../../Components/JS/Navbar';
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [results, setResults] = useState(null); // State to hold the form results
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleFormSubmit = (formResults) => {
+    setResults(formResults); // Update the results state with the form data
   };
 
   return (
@@ -23,7 +28,7 @@ const Home = () => {
 
         <h2>Welcome Suzie,</h2>
 
-        <Graph />
+        <Graph results={results} /> {/* Pass the results prop to the Graph component */}
 
         <div className="blood-sugar">
           <p className="thin" style={{ marginBottom: '0px' }}>current blood sugar</p>
@@ -32,8 +37,20 @@ const Home = () => {
         </div>
       </div>
 
+      <div className={`overlay ${isMenuOpen ? 'overlay-open' : ''}`} onClick={handleMenuToggle}>
+        <div className="menu-options">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/connect">Connect</a></li>
+            <li><a href="/settings">Settings</a></li>
+          </ul>
+          <div className="overlay-text">
+          </div>
+        </div>
+      </div>
+
       <div className={`input-div ${isMenuOpen ? 'menu-open' : ''}`}>
-        <Input />
+        <Input onSubmit={handleFormSubmit} /> {/* Pass the onSubmit handler to the Form component */}
       </div>
     </div>
   );
