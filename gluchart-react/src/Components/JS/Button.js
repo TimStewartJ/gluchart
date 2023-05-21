@@ -5,7 +5,7 @@ export default function Button({text}) {
     return (
         <div>
             <button className="tab">
-                {text}
+                <span className="button-text">{text}</span>
             </button>
         </div>
     )

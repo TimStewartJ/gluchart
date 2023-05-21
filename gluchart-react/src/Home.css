@@ -1,10 +1,16 @@
 body, html {
     margin: 0;
 }
-
+.main-div {
+    background-color: var(--sage-green);
+    margin: 0;
+}
 .home-div {
     background-color: var(--sage-green);
     margin: 30px;
+}
+.input-div {
+    background-color: var(--sage-green);
 }
 
 .icon {
@@ -17,6 +23,7 @@ h2 {
 }
 
 .blood-sugar {
+    margin-top: 36px;
     text-align: center;
 }
 .thin {

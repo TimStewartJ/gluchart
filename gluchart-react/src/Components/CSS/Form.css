@@ -12,12 +12,20 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top:30px;
+    padding-bottom:100%;
 }
 
 .top-buttons {
     display: flex;
     gap: 10px;
     justify-content: center;
+}
+.bottom-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 30px;
 }
 
 .divider {
