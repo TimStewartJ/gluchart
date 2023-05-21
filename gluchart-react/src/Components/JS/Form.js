@@ -3,7 +3,7 @@ import '../CSS/Form.css'
 import Button from './Button'
 import Button2 from './Button2'
 
-export default function Form() {
+export default function Form(props) {
     // default button pressed is glucose
     const [activeButton, setActiveButton] = useState('Glucose');
 
@@ -11,6 +11,7 @@ export default function Form() {
     const [insulinValue, setInsulinValue] = useState('');
     const [mealValue, setMealValue] = useState('');
 
+    // state to hold if loading
     const [isLoading, setIsLoading] = useState(false);
 
     const handleButtonClick = (buttonText) => {
@@ -44,37 +45,38 @@ export default function Form() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setIsLoading(true); // Activate loading state
-
-        // Simulate an asynchronous operation (e.g., API request) using setTimeout
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-
-        // Access the variables (glucoseValue, insulinValue, mealValue) here based on the button pressed
-        // console.log('Glucose:', glucoseValue);
-        // console.log('Insulin:', insulinValue);
-        // console.log('Meal:', mealValue);
-    
-        // sets values to value entered in tab
-        switch (activeButton) {
-          case 'Glucose':
-            setGlucoseValue(glucoseValue);
-            break;
-          case 'Insulin':
-            setInsulinValue(insulinValue);
-            break;
-          case 'Meal':
-            setMealValue(mealValue);
-            break;
-          default:
-            break;
+        setIsLoading(true);
+      
+        try {
+          const results = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve([null, null, null, null, null, null, 6, 8, Math.floor(Math.random() * 7), Math.floor(Math.random() * 7), Math.floor(Math.random() * 7), Math.floor(Math.random() * 7), Math.floor(Math.random() * 7)]);
+            }, 2000);
+          });
+      
+          console.log(results);
+          props.onSubmit(results)
+      
+          switch (activeButton) {
+            case 'Glucose':
+              setGlucoseValue('');
+              break;
+            case 'Insulin':
+              setInsulinValue('');
+              break;
+            case 'Meal':
+              setMealValue('');
+              break;
+            default:
+              break;
+          }
+        } catch (error) {
+          console.error(error);
         }
-
-        setGlucoseValue('');
-        setInsulinValue('');
-        setMealValue('');
-
+      
         setIsLoading(false);
     };
+      
 
     return (
         <div className="form">
