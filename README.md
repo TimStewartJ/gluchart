@@ -52,28 +52,32 @@ To test the accuracy of our model, we had it generate predictions for 30 minutes
 
 The graph below displays the predicted values (red) overlaid on the actual values (black) from the data set:
 
-![image](https://github.com/TimStewartJ/gluchart/assets/24793742/092a1a58-ee6a-47d1-83cb-bc32a13b8a98)
+![image](https://github.com/TimStewartJ/gluchart/assets/24793742/5ec62a28-92a9-44aa-9b89-3091ee338f71)
 
 We also generated a Clark Error Grid for the predictions. Below is the Clark Grid along with a pie chart visualization.
 
-![image](https://github.com/TimStewartJ/gluchart/assets/24793742/ac879a66-3bc6-4526-9487-18412f8070ea)
-![image](https://github.com/TimStewartJ/gluchart/assets/24793742/9baace0d-29a4-446b-b652-2e8c66f73cb0)
+![image](https://github.com/TimStewartJ/gluchart/assets/24793742/ad52000b-7c19-4348-b79d-b3b39f0db43f)
+![image](https://github.com/TimStewartJ/gluchart/assets/24793742/8af71481-c5b0-4574-a858-a4da4ae0e407)
 
 We see that 95.5% of our predictions are within Zone A, while close to none are in Zones C~E, indicating a high level of reliability and effectiveness for our model.
 
 For increased time intervals into the future, however, the reliability of our model decreased. The following are the same graphs for a 1-hour prediction:
 
+![image](https://github.com/TimStewartJ/gluchart/assets/24793742/7fea08b7-64cb-4900-b3eb-b1a4076065fe)
+
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/94928a12-55d1-4ba3-93a2-beb76156e537)
+
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/e006aaed-69ca-4259-b25c-a05b3fe1bbdf)
-![image](https://github.com/TimStewartJ/gluchart/assets/24793742/a0a91ece-c618-4d24-b24c-f7b0166452bb)
 
 And the same, this time for a 2-hour prediction:
-![image](https://github.com/TimStewartJ/gluchart/assets/24793742/e1795ecc-ff50-46f5-a829-eaf85c589120)
-![image](https://github.com/TimStewartJ/gluchart/assets/24793742/f4acdef1-62e2-447d-bcf1-668b6ad7525a)
-![image](https://github.com/TimStewartJ/gluchart/assets/24793742/7d83a494-6418-4eb1-91b4-5722b4876b88)
 
+![image](https://github.com/TimStewartJ/gluchart/assets/24793742/3e8212e0-4111-4a56-bce1-60d2ef6d6935)
 
-After trying various intervals, we concluded that our model was most reliable when predicting up to 30 minutes ahead. 
+![image](https://github.com/TimStewartJ/gluchart/assets/24793742/1130d1e8-ca93-4897-b1ce-ec9491a9909b)
+
+![image](https://github.com/TimStewartJ/gluchart/assets/24793742/418b4ac5-1e0d-4435-a6a0-53b608918f6d)
+
+After trying various intervals, we concluded that our model was best when predicting up to an hour, with it being most reliable around the 30-minute mark.
 
 # Conclusion & Going Forward
 Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
@@ -83,3 +87,5 @@ Here is what our friend Aidan had to say about Gluchart:
 "Within the first few months after adopting this disability, no aspect generates more stress or hesitance than the frequent decision-making process which occurs on a daily basis. Being able to test the ramifications of your choices in real time not only offers a level of reliability which removes mental burden, but helps in teaching you how to best take care of yourself in an educated manner."
 
 Going forward, we want to make our model be able to predict more accurately for longer lengths of time in the future. Aidan talked about how he would have to wake up in the middle of the night because his glucose levels were dangerously low. Having reliable predictions hours into the future could address this issue. Additionally, our model currently requires the user to input their glucose data in a .csv file. While many glucose monitors have a stremedlined process for obtaining monitored values, we could further improve the user experience by allowing users to connect their glucose monitoring devices with our model.
+
+For now, however, we hope that Gluchart will be able to help Aidan--and anybody else in the Davis community and beyond--with adjusting through the challenges of diabetes.
