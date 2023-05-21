@@ -18,6 +18,19 @@ export default function Graph() {
     const options = {
       responsive: true,
       maintainAspectRatio: false,
+      layout: {
+        padding: {
+          top: 20,
+          bottom: 10,
+          left: 10,
+          right: 30,
+        },
+      },
+      plugins: {
+        legend: {
+            display: false
+        }
+      }
     };
     const chart = new ChartJS(ref.current, {
       type: "line",
