@@ -64,5 +64,6 @@ By having a reliable prediction of glucose value in the short-term, patients can
 are about to have a meal and need to dose insulin.
 
 Here is what our friend Aidan had to say about Gluchart:
+(What you say)
 
 
