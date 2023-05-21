@@ -69,11 +69,13 @@ we concluded that we were most confident about the 30 minute predictions.
 
 # Conclusion & Going Forward
 Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
-By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and reduce the risk of over/underinjection, for example when they need to inject insulin before a meal.
+By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and reduce the risk of over/underinjection, especially when they need to inject insulin before a meal.
 
 Here is what our friend Aidan had to say about Gluchart:
 "Within the first few months after adopting this disability, no aspect generates more stress or hesitance than the frequent decision-making process which occurs on a daily basis. Being able to test the ramifications of your choices in real time not only offers a level of reliability which removes mental burden, but helps in teaching you how to best take care of yourself in an educated manner."
 
-While our mod
+Going forward, we want to make our model be able to predict more accurately for longer lengths of time in the future
+For now,
+Dexom connect feature talk abiut
 
 
