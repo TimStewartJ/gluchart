@@ -5,9 +5,6 @@ name: Build and deploy Node.js app to Azure Web App - gluchart
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
 
 env:
   ZIP_NAME: "app-release.zip"
