@@ -128,13 +128,13 @@ export default function Form(props)
     makePrediction(props.input.data)
   };
 
-  let label = 'Insert mg/dL';
+  let label = 'insert mg/dL';
   if (activeButton === 'Meal')
   {
-    label = 'Insert grams';
+    label = 'insert grams';
   } else if (activeButton === 'Insulin')
   {
-    label = 'Insert units of insulin';
+    label = 'insert units';
   }
 
   return (
