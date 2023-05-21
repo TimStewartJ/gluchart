@@ -53,7 +53,7 @@ And here is the Clarke error grid, along with a pie chart with the percentages f
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/72e6c267-4dfa-4066-8ab7-4627903a2154)
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/affbd5b9-fcfa-46af-9d94-5e83e2dd4af2)
 
-We see that 95.5% of our predictions are within Zone A, while close to none are in Zones C~E, allowing us to validate the quality and accuracy of our predictions!
+We see that 95.5% of our predictions are within Zone A, while close to none are in Zones C~E, validating the quality and accuracy of our predictions!
 We found that for the more farther into the future we tried to predict, the less accurate it was. Predicting two hours into the future, we found that only around 50% of
 our values were in Zone A, rendering our predictions less useful and more importantly, dangerous. After experimenting with various prediction intervals into the future, 
 we concluded that we were most confident about the 30 minute predictions.
