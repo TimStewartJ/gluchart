@@ -4,7 +4,7 @@
 Diabetes is a chronic condition that causes problems with the production of insulin, a hormone that our body uses to regulate our sugar levels. With little to no insulin
 being produced in the pancreas, patients with diabetes must regulate their glucose levels by directly injecting insulin.
 
-About two months ago, our friend and fellow Aggie Aidan was diagnosed with Type I diabetes. Since then, he's told us about his struggles in self-administering insulin.
+About two months ago, our friend and fellow Aggie, Aidan was diagnosed with Type I diabetes. Since then, he's told us about his struggles in self-administering insulin.
 He would inject insulin before a meal, only to find out shortly after that it was an insufficient dosage and have to self-administer again. Worse yet was when he would
 overshoot and administer too much insulin, bringing his glucose levels to dangerously low levels that could induce a coma. Often he would have to anxiously sit and wait, hoping that his insulin levels would be back within a safe range after readjusting his dose.
 
