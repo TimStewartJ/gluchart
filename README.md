@@ -16,24 +16,30 @@ our application could guide people in dosing the correct amount of insulin.
 Create a glucose prediction model using machine learning that can accurately forecast a person's glucose levels given their current glucose level and an input of insulin/meal.
 
 # Methods
+For a machine learning algorithm to work, we need two key components: a data set for our model to train on, and an appropriate model for the data to be trained on. We briefly discuss both below.
+
+## Machine Learning Model
 Time series forecasting is a method that analyzes data points from the past to make predictions. The Long Short-Term Memory (LSTM) Neural Network is one of the most 
-popular models used for time series forecasting, and is the model we will be implementing through python to make our prediction model.
+popular models used for time series forecasting, and the model we selected.
 
-## Data
-We used the publicly available data set containing values taken from various patients' Continuous Gluose Monitors (Dexcom in this case) embedded into their bloodstream
-from the 2016 research conducted by Dr. Stacy M. Anderson.
-The dataset included Glucose level, insulin intake, and meal values, which we could clean up and use to train our model.
-
-Link here: https://github.com/irinagain/Awesome-CGM/wiki/Anderson-(2016)
-
-## Machine Learning
 We consulted many online resources on time series prediction using LSTM in python. We found the below article to be the most useful:
 https://joeng03.medium.com/uni-variate-multi-variate-and-multi-step-time-series-forecast-with-lstm-c3f8318adf68
 
 Since our glucose levels are affected by multiple values (different types of insulin, meal values, etc.) , we must use a multivariate prediction model instead of a univariate model.
 
+## Data
+We used the publicly available data set containing values taken from various patients' Continuous Gluose Monitors (Dexcom in this case) embedded into their bloodstream
+from the 2016 research conducted by Dr. Stacy M. Anderson.
+The dataset included Glucose level, insulin intake, and meal values, which we cleaned up and used to train our model.
+
+Link to the dataset: https://github.com/irinagain/Awesome-CGM/wiki/Anderson-(2016)
+
+## Training
+We implemented the model in Python and ran it on Google Colab for training. Once trained, we could generate graphs of the predictions for review. 
+
 ## Verification
-But how do we know if our predictions are valid (other than that they "look good?"). 
+But how do we know if our predictions are valid (other than that they "look good?")
+
 The Clarke Error Grid Analysis (EGA), developed in 1987, is used to quantify clinical accuracy of glucose predictions. Many research papers we referenced used EGA to quantify the accuracy of their predictions.
 To oversimplify, the more dots there are in region A in the graph, the better (regions B, C, D, and E less so--with point E being a particularly dangerous misprediction.)
 
@@ -45,8 +51,10 @@ Wikipedia: https://en.wikipedia.org/wiki/Clarke_Error_Grid
 If we see that most of our values are in Zone A, we will be able to confirm that our prediction fairly accurate.
 
 # Results and Interpretation
-We trained our model to predict what would happen 30 minutes from now, given that no meals/insulin intakes happened.
-Here are the predictions (red) on top of the actual values (black):
+Now let's see how we did!
+This is what our model predicted would happen 30 minutes from now,  given that no meals/insulin intakes occurred.
+
+The predictions (red) are on top of the actual values (black):
 
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/2ca9e9d6-e1ff-4734-8c10-9373fc01d9bc)
 
@@ -61,11 +69,13 @@ we concluded that we were most confident about the 30 minute predictions.
 
 # Conclusion & Going Forward
 Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
-By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and reduce the risk of over/underinjection, for example when they need to inject insulin before a meal.
+By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and reduce the risk of over/underinjection, especially when they need to inject insulin before a meal.
 
 Here is what our friend Aidan had to say about Gluchart:
 "Within the first few months after adopting this disability, no aspect generates more stress or hesitance than the frequent decision-making process which occurs on a daily basis. Being able to test the ramifications of your choices in real time not only offers a level of reliability which removes mental burden, but helps in teaching you how to best take care of yourself in an educated manner."
 
-While our mod
+Going forward, we want to make our model be able to predict more accurately for longer lengths of time in the future
+For now,
+Dexom connect feature talk abiut
 
 
