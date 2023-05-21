@@ -8,6 +8,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/score', (req, res) => {
+    
     fetch("https://gluchartwrapper.azure-api.net/score",
     {
         method: "post",
@@ -22,7 +23,7 @@ app.post('/score', (req, res) => {
         })
         .then((response) => response.json())
         .then((data) => {
-            res.send({test: "joe mama", output: data})
+            return res.json({test: "joe mama", output: data})
         })
 })
 
