@@ -4,7 +4,7 @@ import Button from './Button'
 import Button2 from './Button2'
 
 export default function Form() {
-    const [activeButton, setActiveButton] = useState('');
+    const [activeButton, setActiveButton] = useState('Glucose');
 
     const handleButtonClick = (buttonText) => {
         setActiveButton(buttonText);
@@ -42,8 +42,8 @@ export default function Form() {
             <input type="text" id="fname" name="firstname" className="grams-input"></input>
 
             <div className="bottom-buttons">
-                <Button2 text="predict" color="var(--sage-green" />
-                <Button2 text="submit" color="var(--light-blue" />
+                <Button2 text="predict" color="var(--sage-green)" />
+                <Button2 text="submit" color="var(--light-blue)" />
             </div>
         </div>
     );
