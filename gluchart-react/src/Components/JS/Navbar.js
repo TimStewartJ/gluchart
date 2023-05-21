@@ -7,9 +7,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/connect">Connect</Link></li>
-        <li><Link to="/settings">Settings</Link></li>
+        <li><Link to="/">home</Link></li>
+        <li><Link to="/connect">connect</Link></li>
+        <li><Link to="/settings">settings</Link></li>
       </ul>
     </div>
   );
