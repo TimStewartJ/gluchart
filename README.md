@@ -80,7 +80,7 @@ And the same, this time for a 2-hour prediction:
 After trying various intervals, we concluded that our model was best when predicting up to an hour, with it being most reliable around the 30-minute mark.
 
 # Conclusion & Going Forward
-In conclusion, our LSTM model trained on data collected from glucose monitors were able to provide extremely reliable predictions up to 30 minutes, while giving reasonable estimates up to an hour. Having an effective model for short-term blood glucose level prediction helps patients better dose for insulin and reduce the risk of over or under injection
+In conclusion, our LSTM was able to provide extremely reliable predictions up to 30 minutes, while giving reasonable estimates up to an hour. Having an effective model for short-term blood glucose level prediction helps patients better dose for insulin and reduce the risk of over or under injection
 
 Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future.
 By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and minimize the risks of over or under-injection, particularly in mealtime scenarios. After seeing how future glucose levels charted out, or how they would change based on a meal or an injection, users could adjust and plan to better ensure their health.
