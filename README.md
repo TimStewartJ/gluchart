@@ -77,7 +77,7 @@ And the same, this time for a 2-hour prediction:
 
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/418b4ac5-1e0d-4435-a6a0-53b608918f6d)
 
-After trying various intervals, we concluded that our model was most reliable when predicting up to 30 minutes ahead. 
+After trying various intervals, we concluded that our model was best when predicting up to an hour, with it being most reliable around the 30-minute mark.
 
 # Conclusion & Going Forward
 Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
