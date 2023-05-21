@@ -114,11 +114,22 @@ export default function Form(props)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (activeButton === 'Glucose') {
-      props.input.data.push([+glucoseValue, 0, 0, 0, 0])
-      makePrediction(props.input.data)
-      props.setMasterInput(props.input)
+    switch (activeButton) {
+      case 'Glucose':
+        props.input.data.push([+glucoseValue, 0, 0, 0, 0])
+        break
+      case 'Insulin':
+        props.input.data.at(-1)[4] = +insulinValue
+        break
+      case 'Meal':
+        props.input.data.at(-1)[4] = +mealValue
+        break
+      default:
+        break
     }
+
+    makePrediction(props.input.data)
+    props.setMasterInput(props.input)
   }
 
   // Button for submitting user input
