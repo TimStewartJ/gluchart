@@ -1,36 +1,53 @@
-import React from 'react';
-import '../CSS/Home.css';
+import React, { useState } from 'react';
 import Hamburger from '../../menu.png';
-import Graph from '../../Components/JS/Graph';
-import Input from '../../Components/JS/Form';
+import '../CSS/Connect.css';
 import Navbar from '../../Components/JS/Navbar';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Connect = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="main-div">
-      <Navbar />
-
-      <div className="home-div">
-        <div className="icon">
+      <div className={`home-div ${isMenuOpen ? 'menu-open' : ''}`}>
+        <div className="icon" onClick={handleMenuToggle}>
           <img src={Hamburger} alt="Hamburger" />
         </div>
-
-        <h2>Welcome Suzie,</h2>
-
-        <Graph />
-
-        <div className="blood-sugar">
-          <p className="thin" style={{ marginBottom: '0px' }}>current blood sugar</p>
-          <p className="normal">140</p>
-          <p className="thin" style={{ marginTop: '0px' }}>mg/dL</p>
+        <div className="stuffs">
+          <h2>Connect</h2>
+          <div className="connect-buttons">
+            <button className='bootons'>Dexcom</button>
+            <button className='bootons'>Fitbit</button>
+            <button className='bootons'>Upload CSV</button>
+          </div>
         </div>
       </div>
 
-      <div className="input-div">
-        <Input />
-      </div>
+      {isMenuOpen && (
+        <div className="overlay" onClick={handleMenuToggle}>
+          <div className="navbar-overlay">
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/connect">Connect</Link>
+              </li>
+              <li>
+                <Link to="/settings">Settings</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {isMenuOpen && <Navbar />}
     </div>
   );
 };
 
-export default Home;
+export default Connect;

@@ -107,6 +107,7 @@ export default function Form(props)
     switch (activeButton)
     {
       case 'Glucose':
+        props.BloodSugar(glucoseValue);
         setGlucoseValue('');
         break;
       case 'Insulin':
@@ -125,6 +126,12 @@ export default function Form(props)
     setIsLoading(false);
   };
 
+  let label = 'insert mg/dL';
+  if (activeButton === 'Meal') {
+    label = 'insert grams';
+  } else if (activeButton === 'Insulin') {
+    label = 'insert milliliters';
+  }
 
   return (
     <div className="form">
@@ -154,7 +161,7 @@ export default function Form(props)
 
       <hr className="divider"></hr>
 
-      <label htmlFor="input" className="grams">insert grams
+      <label htmlFor="input" className="grams">{label}
         {isLoading && <span className="loader" />}
       </label>
       <input type="number" id="input" name="grams" className="grams-input"

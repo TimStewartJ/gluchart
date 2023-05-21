@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../CSS/Home.css';
 import Hamburger from '../../menu.png';
 import Graph from '../../Components/JS/Graph';
@@ -35,8 +36,6 @@ const Home = () =>
 
   return (
     <div className="main-div">
-      <Navbar isMenuOpen={isMenuOpen} />
-
       <div className={`home-div ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="icon" onClick={handleMenuToggle}>
           <img src={Hamburger} alt="Hamburger" />
@@ -53,21 +52,23 @@ const Home = () =>
         </div>
       </div>
 
-      <div className={`overlay ${isMenuOpen ? 'overlay-open' : ''}`} onClick={handleMenuToggle}>
-        <div className="menu-options">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/connect">Connect</a></li>
-            <li><a href="/settings">Settings</a></li>
-          </ul>
-          <div className="overlay-text">
+      {isMenuOpen && (
+        <div className="overlay" onClick={handleMenuToggle}>
+          <div className="navbar-overlay">
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/connect">Connect</Link></li>
+              <li><Link to="/settings">Settings</Link></li>
+            </ul>
           </div>
         </div>
-      </div>
+      )}
 
       <div className={`input-div ${isMenuOpen ? 'menu-open' : ''}`}>
         <Input onSubmit={handleFormSubmit} inputData={masterInput} /> {/* Pass the onSubmit handler to the Form component */}
       </div>
+
+      {isMenuOpen && <Navbar />}
     </div>
   );
 };

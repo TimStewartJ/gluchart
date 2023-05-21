@@ -1,11 +1,10 @@
-# Gluchart
-A glucose level prediction model using a LSTM model.
+# Gluchart: A glucose level prediction model using a LSTM model
 
 # Overview
 Diabetes is a chronic condition that causes problems with the production of insulin, a hormone that our body uses to regulate our sugar levels. With little to no insulin
 being produced in the pancreas, patients with diabetes must regulate their glucose levels by directly injecting insulin.
 
-About two months ago, our friend and fellow Aggie Aidan was diagnosed with Type I diabetes. Since then, he's told us about his struggles in self-administering insulin.
+About two months ago, our friend and fellow Aggie, Aidan was diagnosed with Type I diabetes. Since then, he's told us about his struggles in self-administering insulin.
 He would inject insulin before a meal, only to find out shortly after that it was an insufficient dosage and have to self-administer again. Worse yet was when he would
 overshoot and administer too much insulin, bringing his glucose levels to dangerously low levels that could induce a coma. Often he would have to anxiously sit and wait, hoping that his insulin levels would be back within a safe range after readjusting his dose.
 
@@ -59,7 +58,7 @@ We also generated a Clark Error Grid for the predictions. Below is the Clark Gri
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/ad52000b-7c19-4348-b79d-b3b39f0db43f)
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/8af71481-c5b0-4574-a858-a4da4ae0e407)
 
-We see that 95.5% of our predictions are within Zone A, while close to none are in Zones C~E, indicating a high level of reliability and effectiveness for our model.
+We see that 94.6 of our predictions are within Zone A, while close to none are in Zones C~E, indicating a high level of reliability and effectiveness for our model.
 
 For increased time intervals into the future, however, the reliability of our model decreased. The following are the same graphs for a 1-hour prediction:
 
@@ -92,4 +91,4 @@ Here is what our friend Aidan had to say about Gluchart and his experiences with
 
 Going forward, our focus is on improving accuracy of predictions for longer time intervals in the future. One of the experiences Aidan shared with us was getting up in the middle of the night due to his blood glucose levels being dangerously low, and this highlights one of many scenarios where reliable long-term predictions of glucose levels would be valuable. Furthermore, we recognize the need to streamline the data input process for users. Currently, users have to input the data from their glucose monitors in the form of a .csv file upload. While companies such as dexcom provide a relatively simple process for exporting users’ data to .csv files, we think that a streamlined process that connects our model directly to monitors such as Dexcom or Fitbit would make our process seamless.
 
-As is it, however, we hope that Gluchart will be able to serve as a valuable tool for assisting individuals of the Davis community and beyond in navigating diabetes and staying healthy.
+As it is, we hope that Gluchart will be able to serve as a valuable tool for assisting individuals of the Davis community and beyond in navigating diabetes and staying healthy.
