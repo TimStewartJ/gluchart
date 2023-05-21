@@ -75,6 +75,10 @@ export default function Form(props)
       console.log(results);
       props.onSubmit(results)
 
+          if (activeButton === 'Glucose') {
+            props.BloodSugar(glucoseValue);
+          }
+
       switch (activeButton)
       {
         case 'Glucose':
