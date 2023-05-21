@@ -62,6 +62,7 @@ we concluded that we were most confident about the 30 minute predictions.
 # Conclusion & Going Forward
 Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
 By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and reduce the risk of over/underinjection, for example when they need to inject insulin before a meal.
+
 Here is what our friend Aidan had to say about Gluchart:
 (What you say)
 
