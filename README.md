@@ -9,8 +9,7 @@ About two months ago, our friend and fellow Aggie Aidan was diagnosed with Type 
 He would inject insulin before a meal, only to find out shortly after that it was an insufficient dosage and have to self-administer again. Worse yet was when he would
 overshoot and administer too much insulin, bringing his glucose levels to dangerously low levels that could induce a coma.
 
-We wanted to create an application that could aid Aidan, fellow Aggies, and anyone adjusting to diabetes by showing their glucose levels ahead of time. If successful,
-our application could guide people in dosing the correct amount of insulin.
+We wanted to create an application that could aid Aidan, fellow Aggies, and anyone adjusting to diabetes by showing their glucose levels ahead of time. Our model would be trained on a user's data, and be able to predict their glucose for a set amount of time. 
 
 # Goals
 Create a glucose prediction model using machine learning that can accurately forecast a person's glucose levels given their current glucose level and an input of insulin/meal.
@@ -28,9 +27,9 @@ https://joeng03.medium.com/uni-variate-multi-variate-and-multi-step-time-series-
 Since our glucose levels are affected by multiple values (different types of insulin, meal values, etc.) , we must use a multivariate prediction model instead of a univariate model.
 
 ## Data
-We used the publicly available data set containing values taken from various patients' Continuous Gluose Monitors (Dexcom in this case) embedded into their bloodstream
+We found a publicly available data set containing values taken from various patients' Continuous Gluose Monitors (Dexcom in this case) embedded into their bloodstream
 from the 2016 research conducted by Dr. Stacy M. Anderson.
-The dataset included Glucose level, insulin intake, and meal values, which we cleaned up and used to train our model.
+The dataset included Glucose level, insulin intake, and meal values, which we cleaned up and used to train our model. Since this is the kind of data users would upload from their devices, we decided to use this dataset to prove that our model works.
 
 Link to the dataset: https://github.com/irinagain/Awesome-CGM/wiki/Anderson-(2016)
 
