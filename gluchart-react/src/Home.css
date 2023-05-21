@@ -7,7 +7,7 @@ body, html {
 }
 .home-div {
     background-color: var(--sage-green);
-    margin: 30px;
+    padding: 30px;
 }
 .input-div {
     background-color: var(--sage-green);
