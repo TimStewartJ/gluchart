@@ -1,4 +1,4 @@
-# Gluchart: A glucose level prediction model
+# Gluchart: A Blood Glucose Prediction Model
 
 # Overview
 Diabetes is a chronic condition that causes problems with the production of insulin, a hormone that our body uses to regulate our sugar levels. With little to no insulin
@@ -33,7 +33,8 @@ A key feature of this dataset was that it was data collected by a glucose monito
 For access to this dataset, please follow the link: https://github.com/irinagain/Awesome-CGM/wiki/Anderson-(2016)
 
 ## Training
-To train our model, we wrote the program in Python and conducted training on Google Colab. Once the model was finished, we could have it predict future values for validation.
+To train our model, we wrote the program in Python and conducted training on Microsoft Azure. We also hosted our web app for the user to interact with our model on Azure.
+interacts with the model with on Azure.
 
 ## Verification
 To ensure the validity of our predictions, we use the Clarke Error Grid Analysis (EGA), a widely accepted method developed in 1987 specifically for measuring the quality of blood glucose level predictions. In essence, EGA plots glucose predictions on a graph divided into five regions (Regions A through E). Region A represents accurate predictions, while regions B, C, D, and are increasingly "bad" prediction, with point E being a potentially dangerous misprediction.
