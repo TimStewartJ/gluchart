@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import './Home.css';
-import Hamburger from './menu.png';
-import Graph from '../src/Components/JS/Graph';
-import Input from './Components/JS/Form';
+import '../CSS/Home.css';
+import Hamburger from '../../menu.png';
+import Graph from '../../Components/JS/Graph';
+import Input from '../../Components/JS/Form';
+import Navbar from '../../Components/JS/Navbar';
 
-export default function Home() {
+const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [results, setResults] = useState(null); // State to hold the form results
 
@@ -18,6 +19,8 @@ export default function Home() {
 
   return (
     <div className="main-div">
+      <Navbar isMenuOpen={isMenuOpen} />
+
       <div className={`home-div ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="icon" onClick={handleMenuToggle}>
           <img src={Hamburger} alt="Hamburger" />
@@ -51,4 +54,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;
