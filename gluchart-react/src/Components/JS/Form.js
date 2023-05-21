@@ -22,6 +22,9 @@ export default function Form(props)
     if (!isLoading)
     {
       setActiveButton(buttonText);
+      setGlucoseValue('');
+      setInsulinValue('');
+      setMealValue('');
     }
   };
 
@@ -32,18 +35,12 @@ export default function Form(props)
     {
       case 'Glucose':
         setGlucoseValue(value);
-        setInsulinValue('');
-        setMealValue('');
         break;
       case 'Insulin':
         setInsulinValue(value);
-        setGlucoseValue('');
-        setMealValue('');
         break;
       case 'Meal':
         setMealValue(value);
-        setInsulinValue('');
-        setGlucoseValue('');
         break;
       default:
         break;
@@ -54,14 +51,8 @@ export default function Form(props)
     setIsLoading(true);
 
     let submissionData = data
-    //submissionData = submissionData.slice(0, 500)
-    // submissionData.at(-1)[0] = +glucoseValue
     submissionData.at(-3)[1] = +mealValue
     submissionData.at(-3)[4] = +insulinValue
-
-    //console.log(submissionData.at(-1))
-
-    //console.log(JSON.stringify(submissionData))
 
     await fetch("https://gluchart-ml-wrapper.azurewebsites.net/score",
       {
@@ -88,22 +79,6 @@ export default function Form(props)
         props.onSubmit({ curr: current_input, pred: pred_output })
       })
 
-    switch (activeButton)
-    {
-      case 'Glucose':
-        props.setBloodSugar(+glucoseValue);
-        setGlucoseValue('');
-        break;
-      case 'Insulin':
-        setInsulinValue('');
-        break;
-      case 'Meal':
-        setMealValue('');
-        break;
-      default:
-        break;
-    }
-
     // Edit master array
     // Send to azure fetch
 
@@ -117,12 +92,16 @@ export default function Form(props)
     switch (activeButton) {
       case 'Glucose':
         props.input.data.push([+glucoseValue, 0, 0, 0, 0])
+        props.setBloodSugar(+glucoseValue);
+        setGlucoseValue('');
         break
       case 'Insulin':
         props.input.data.at(-1)[4] = +insulinValue
+        setInsulinValue('');
         break
       case 'Meal':
         props.input.data.at(-1)[4] = +mealValue
+        setMealValue('');
         break
       default:
         break
