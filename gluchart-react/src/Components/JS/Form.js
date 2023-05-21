@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../CSS/Form.css'
 import Button from './Button'
 import Button2 from './Button2'
