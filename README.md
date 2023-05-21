@@ -1,4 +1,4 @@
-# Gluchart: A Blood Glucose Prediction Model
+# Gluchart: A Machine Learning Blood Glucose Prediction Model
 
 # Overview
 Diabetes is a chronic condition that causes problems with the production of insulin, a hormone that our body uses to regulate our sugar levels. With little to no insulin
