@@ -23,7 +23,6 @@ jobs:
 
       - name: npm install, build, and test
         run: npm install
-        working-directory: server
 
       - name: Zip artifact to upload
         run: zip -r ${{ env.ZIP_NAME }} server/
