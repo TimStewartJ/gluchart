@@ -50,9 +50,9 @@ export default function Form() {
         await new Promise((resolve) => setTimeout(resolve, 2000));
 
         // Access the variables (glucoseValue, insulinValue, mealValue) here based on the button pressed
-        console.log('Glucose:', glucoseValue);
-        console.log('Insulin:', insulinValue);
-        console.log('Meal:', mealValue);
+        // console.log('Glucose:', glucoseValue);
+        // console.log('Insulin:', insulinValue);
+        // console.log('Meal:', mealValue);
     
         // sets values to value entered in tab
         switch (activeButton) {
@@ -104,7 +104,9 @@ export default function Form() {
 
             <hr className="divider"></hr>
 
-            <label htmlFor="input" className="grams">insert grams</label>
+            <label htmlFor="input" className="grams">insert grams
+                {isLoading && <span className="loader" />}
+            </label>
             <input type="number" id="input" name="grams" className="grams-input" 
                 value={
                     activeButton === 'Glucose'
