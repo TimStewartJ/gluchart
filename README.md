@@ -38,7 +38,8 @@ Link to the dataset: https://github.com/irinagain/Awesome-CGM/wiki/Anderson-(201
 We implemented the model in Python and ran it on Google Colab for training. Once trained, we could generate graphs of the predictions for review. 
 
 ## Verification
-But how do we know if our predictions are valid (other than that they "look good?"). 
+But how do we know if our predictions are valid (other than that they "look good?")
+
 The Clarke Error Grid Analysis (EGA), developed in 1987, is used to quantify clinical accuracy of glucose predictions. Many research papers we referenced used EGA to quantify the accuracy of their predictions.
 To oversimplify, the more dots there are in region A in the graph, the better (regions B, C, D, and E less so--with point E being a particularly dangerous misprediction.)
 
@@ -50,7 +51,7 @@ Wikipedia: https://en.wikipedia.org/wiki/Clarke_Error_Grid
 If we see that most of our values are in Zone A, we will be able to confirm that our prediction fairly accurate.
 
 # Results and Interpretation
-Now let's see how we did.
+Now let's see how we did!
 This is what our model predicted would happen 30 minutes from now,  given that no meals/insulin intakes occurred.
 
 The predictions (red) are on top of the actual values (black):
