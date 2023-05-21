@@ -6,12 +6,15 @@ import Graph from '../../Components/JS/Graph';
 import Input from '../../Components/JS/Form';
 import Navbar from '../../Components/JS/Navbar';
 import { useEffect } from 'react';
+import X from '../../close.png'
+import Logo from '../../Logo.png'
 
 const Home = () =>
 {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [results, setResults] = useState({ curr: [69, 420], pred: [420, 69] }); // State to hold the form results
   const [masterInput, setMasterInput] = useState(null);
+  const [bloodSugar, setBloodSugar] = useState(140);
 
   useEffect(() =>
   {
@@ -37,8 +40,18 @@ const Home = () =>
   return (
     <div className="main-div">
       <div className={`home-div ${isMenuOpen ? 'menu-open' : ''}`}>
-        <div className="icon" onClick={handleMenuToggle}>
-          <img src={Hamburger} alt="Hamburger" />
+        <div className="header">
+          <div className="logo-container">
+            <img src={Logo} alt="Logo" className="logo" />
+          </div>
+
+          <div className="icon" onClick={handleMenuToggle}>
+            {isMenuOpen ? (
+              <img src={X} alt="Close" />
+            ) : (
+              <img src={Hamburger} alt="Hamburger" />
+            )}
+          </div>
         </div>
 
         <h2>Welcome Suzie,</h2>
@@ -47,7 +60,7 @@ const Home = () =>
 
         <div className="blood-sugar">
           <p className="thin" style={{ marginBottom: '0px' }}>current blood sugar</p>
-          <p className="normal">140</p>
+          <p className="normal">{bloodSugar}</p>
           <p className="thin" style={{ marginTop: '0px' }}>mg/dL</p>
         </div>
       </div>
@@ -65,7 +78,7 @@ const Home = () =>
       )}
 
       <div className={`input-div ${isMenuOpen ? 'menu-open' : ''}`}>
-        <Input onSubmit={handleFormSubmit} inputData={masterInput} /> {/* Pass the onSubmit handler to the Form component */}
+        <Input onSubmit={handleFormSubmit} input={masterInput} setMasterInput={setMasterInput} setBloodSugar={setBloodSugar} /> {/* Pass the onSubmit handler to the Form component */}
       </div>
 
       {isMenuOpen && <Navbar />}

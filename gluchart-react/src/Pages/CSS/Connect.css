@@ -1,4 +1,4 @@
-.whole_div{
+.funny-div{
     background-color: var(--turqoise);
     display: flex;
     flex-direction: column;
@@ -32,6 +32,14 @@ h2{
     width: 300px;
 }
 
+.bootons:nth-child(1) {
+    background-color: #50AD41;
+}
+
+.bootons:nth-child(2) {
+    background-color: #00B089;
+}
+
 .connect_buttons{
     padding-top: 100px;
     display: flex;
@@ -41,4 +49,10 @@ h2{
 
 .stuffs {
     text-align: center;
+}
+
+.home2-div {
+    flex-grow: 1;
+    /* min-height: 100vh; */
+    padding: 30px;
 }
