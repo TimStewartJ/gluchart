@@ -20,9 +20,9 @@ const Connect = () => {
 
         <h2>Connect</h2>
         <div className="connect-buttons">
-          <button>Button 1</button>
-          <button>Button 2</button>
-          <button>Button 3</button>
+          <button className='bootons'>Dexcom</button>
+          <button className='bootons'>Fitbit</button>
+          <button className='bootons'>Upload CSV</button>
         </div>
       </div>
 
