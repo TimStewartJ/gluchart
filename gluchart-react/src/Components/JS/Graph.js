@@ -8,7 +8,7 @@ export default function Graph() {
   useEffect(() => {
     if (!ref.current) return;
     const data = {
-      labels: ["30mins", "25mins", "20mins", "15mins", "10mins", "5mins"],
+      labels: ["30", "25", "20", "15", "10", "5"],
       datasets: [
         {
           data: [8, 7.8, 6, 8, 7, 5, 6],
@@ -20,17 +20,45 @@ export default function Graph() {
       maintainAspectRatio: false,
       layout: {
         padding: {
-          top: 20,
+          top: 40,
           bottom: 10,
           left: 10,
-          right: 30,
+          right: 40,
         },
       },
       plugins: {
         legend: {
-            display: false
-        }
-      }
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          display: true,
+          title: {
+            display: true,
+            text: "minutes",
+            padding: {
+                top: 10,
+              },
+            font: {
+              size: 12, weight: 600
+            },
+          },
+        },
+        y: {
+          display: true,
+          title: {
+            display: true,
+            text: "mg/DL",
+            padding: {
+                bottom: 20,
+              },
+            font: {
+              size: 12, weight: 600
+            },
+          },
+        },
+      },
     };
     const chart = new ChartJS(ref.current, {
       type: "line",
