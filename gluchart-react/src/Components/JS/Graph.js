@@ -12,11 +12,11 @@ export default function Graph() {
       datasets: [
         {
           data: [8, 7.8, 6, 8, 7, 5, 6, null],
-          borderColor: "black",
+          borderColor: "#577383",
         },
         {
             data: [null, null, null, null, null, null, 6, 8, 7, 6, 7, 5, 6.6],
-            borderColor: "green",
+            borderColor: "#6DA5A6",
         }
       ],
     };

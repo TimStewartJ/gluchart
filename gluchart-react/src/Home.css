@@ -18,13 +18,17 @@ body, html {
 }
 
 .icon {
-    text-align: right; 
-}
+    text-align: right;
+    position: relative;
+    z-index: 1000;
+  }
 
 h2 {
     font-family: 'Red Hat Display';
     color: white;
     margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
 .blood-sugar {
@@ -47,3 +51,41 @@ h2 {
     margin-top: -5px;
     margin-bottom: -5px;
 }
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 50%;
+    background-color: #577383; /* Adjust the opacity as desired */
+    z-index: 999;
+    display: none;
+    border-radius: 20px 0px 0px 20px;
+  }
+  
+  .overlay.overlay-open {
+    display: block;
+  }
+  
+  .menu-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 100px;
+    justify-content: center;
+    font-family: 'Red Hat Display';
+    font-weight: 400;
+    list-style: none;
+    height: 100%;
+  }
+  
+  .menu-options li {
+    margin: 30px 0;
+    list-style-type: none;
+  }
+  
+  .menu-options li a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+  }
