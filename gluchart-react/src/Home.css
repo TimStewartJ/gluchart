@@ -3,14 +3,18 @@ body, html {
 }
 .main-div {
     background-color: var(--sage-green);
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .home-div {
     background-color: var(--sage-green);
+    flex-grow: 1;
+    /* min-height: 100vh; */
     padding: 30px;
 }
 .input-div {
-    background-color: var(--sage-green);
+    background-color: white;
 }
 
 .icon {

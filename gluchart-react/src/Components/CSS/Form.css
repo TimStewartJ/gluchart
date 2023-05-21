@@ -13,6 +13,7 @@ html, body {
     justify-content: center;
     align-items: center;
     padding-top:30px;
+    /* padding-bottom:100px; */
 }
 
 .top-buttons {
@@ -24,7 +25,8 @@ html, body {
     display: flex;
     gap: 10px;
     justify-content: center;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .divider {
