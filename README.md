@@ -20,8 +20,10 @@ Time series forecasting is a method that analyzes data points from the past to m
 popular models used for time series forecasting, and is the model we will be implementing through python to make our prediction model.
 
 ## Data
-We used the publicly available data set of patient's CGM (Continuous Glucode Monitoring--provided by devices that the patients wore), insulin intake, and meal values
+We used the publicly available data set containing values taken from various patients' Continuous Gluose Monitors (Dexcom in this case) embedded into their bloodstream
 from the 2016 research conducted by Dr. Stacy M. Anderson.
+The dataset included Glucose level, insulin intake, and meal values, which we could clean up and use to train our model.
+
 Link here: https://github.com/irinagain/Awesome-CGM/wiki/Anderson-(2016)
 
 ## Machine Learning
@@ -34,7 +36,12 @@ Since our glucose levels are affected by multiple values (different types of ins
 But how do we know if our predictions are valid (other than that they "look good?"). 
 The Clarke Error Grid Analysis (EGA), developed in 1987, is used to quantify clinical accuracy of glucose predictions. Many research papers we referenced used EGA to quantify the accuracy of their predictions.
 To oversimplify, the more dots there are in region A in the graph, the better (regions B, C, D, and E less so--with point E being a particularly dangerous misprediction.)
-More can be read about EGA here: https://en.wikipedia.org/wiki/Clarke_Error_Grid
+
+More on the EGA:
+NHS: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7196876/
+Wikipedia: https://en.wikipedia.org/wiki/Clarke_Error_Grid
+
+If we see that most of our values are in Zone A, we will be able to confirm that our prediction fairly accurate.
 
 # Results and Interpretation
 We trained an LSTM model on the Anderson data to predict up to 30 minutes in the future. 
@@ -46,8 +53,16 @@ And here is the Clarke error grid, along with a pie chart with the percentages f
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/72e6c267-4dfa-4066-8ab7-4627903a2154)
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/affbd5b9-fcfa-46af-9d94-5e83e2dd4af2)
 
+We see that 95.5% of our predictions are within Zone A, while close to none are in Zones C~E, allowing us to validate the quality and accuracy of our predictions!
+We found that for the more farther into the future we tried to predict, the less accurate it was. Predicting two hours into the future, we found that only around 50% of
+our values were in Zone A, rendering our predictions less useful and more importantly, dangerous. After experimenting with various prediction intervals into the future, 
+we concluded that we were most confident about the 30 minute predictions.
 
+# Conclusion & Going Forward
+Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
+By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and reduce the risk of over/underinjection, for example when they
+are about to have a meal and need to dose insulin.
 
-
+Here is what our friend Aidan had to say about Gluchart:
 
 
