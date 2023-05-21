@@ -56,23 +56,3 @@ html, body {
     font-size: 24px;
     color: var(--turqoise);
 }
-
-.loader {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 2px solid gray;
-    border-top-color: transparent;
-    animation: spin 0.8s linear infinite;
-    margin-left: 5px;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
