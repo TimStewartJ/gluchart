@@ -45,7 +45,7 @@ Wikipedia: https://en.wikipedia.org/wiki/Clarke_Error_Grid
 If we see that most of our values are in Zone A, we will be able to confirm that our prediction fairly accurate.
 
 # Results and Interpretation
-We trained an LSTM model on the Anderson data to predict up to 30 minutes in the future. 
+We trained our model to predict what would happen 30 minutes from now, given that no meals/insulin intakes happened.
 Here are the predictions (red) on top of the actual values (black):
 
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/2ca9e9d6-e1ff-4734-8c10-9373fc01d9bc)
@@ -55,7 +55,7 @@ And here is the Clarke error grid, along with a pie chart with the percentages f
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/affbd5b9-fcfa-46af-9d94-5e83e2dd4af2)
 
 We see that 95.5% of our predictions are within Zone A, while close to none are in Zones C~E, validating the quality and accuracy of our predictions!
-We found that for the more farther into the future we tried to predict, the less accurate it was. Predicting two hours into the future, we found that only around 50% of
+The more farther into the future we tried to predict, the less accurate it was. Predicting two hours into the future, only around 50% of
 our values were in Zone A, rendering our predictions less useful and more importantly, dangerous. After experimenting with various prediction intervals into the future, 
 we concluded that we were most confident about the 30 minute predictions.
 
@@ -64,6 +64,8 @@ Using an LSTM model trained on data obtained from continuous glucose monitors, w
 By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and reduce the risk of over/underinjection, for example when they need to inject insulin before a meal.
 
 Here is what our friend Aidan had to say about Gluchart:
-(What you say)
+"Within the first few months after adopting this disability, no aspect generates more stress or hesitance than the frequent decision-making process which occurs on a daily basis. Being able to test the ramifications of your choices in real time not only offers a level of reliability which removes mental burden, but helps in teaching you how to best take care of yourself in an educated manner."
+
+While our mod
 
 
