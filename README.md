@@ -12,42 +12,39 @@ overshoot and administer too much insulin, bringing his glucose levels to danger
 We wanted to create an application that could aid Aidan, fellow Aggies, and anyone adjusting to diabetes by showing their glucose levels ahead of time. Our model would be trained on a user's data, and be able to predict their glucose for a set amount of time. If successful, it would enhance insulin dosing accuracies for patients and help them avoid having to readjust, ultimately improving their quality of life.
 
 # Goals
-Create a glucose prediction model using machine learning that can accurately forecast a person's glucose levels given their current glucose level and an input of insulin/meal.
+The primary goal of this project is to create a glucose prediction model using machine learning that can accurately forecast a person's glucose levels given their current glucose level and an input of insulin or meal.
 
 # Methods
-For a machine learning algorithm to work, we need two key components: a data set for our model to train on, and an appropriate model for the data to be trained on. We briefly discuss both below.
+For a machine learning algorithm to work, we need two key components: a data set for our model to train on, and an appropriate model for the data to be trained on. Once a model is trained and we verify its accuracy, the model can be used for any patient's data (provided that it is in the correct format) to generate a glucose level predictor personalized for them.
 
 ## Machine Learning Model
-Time series forecasting is a method that analyzes data points from the past to make predictions. The Long Short-Term Memory (LSTM) Neural Network is one of the most 
-popular models used for time series forecasting, and the model we selected.
+To predict future events using past data, we employed time series forecasting, a method of analyzes data points from the past to make predictions. We selected the the Long Short-Term Memory (LSTM) neural network, a widely accepted machine learning model for future data prediction.
 
-We consulted many online resources on time series prediction using LSTM in python. We found the below article to be the most useful:
+We consulted various online resources on time series prediction using LSTM in python. We found the below article to be the most useful:
 https://joeng03.medium.com/uni-variate-multi-variate-and-multi-step-time-series-forecast-with-lstm-c3f8318adf68
 
-Since our glucose levels are affected by multiple values (different types of insulin, meal values, etc.) , we must use a multivariate prediction model instead of a univariate model.
+The resource provided guidance on developing a multivariate prediction model, which was necessary because glucose levels were dependent on multiple input points (different types of insulin, meal values, etc.)
 
 ## Data
-We found a publicly available data set containing values taken from various patients' Continuous Gluose Monitors (Dexcom in this case) embedded into their bloodstream
-from the 2016 research conducted by Dr. Stacy M. Anderson.
-The dataset included Glucose level, insulin intake, and meal values, which we cleaned up and used to train our model. Since this is the kind of data users would upload from their devices, we decided to use this dataset to prove that our model works.
+To train our glucose prediction model, we utilized a publicly available dataset obtained from the 2016 research conducted by Dr. Stacy M. Anderson. 
+The dataset consisted of glucose level, insulin intake, and meal values extracted from a glucose monitoring device (Dexcom in this case) attached to various patients' bloodstreams. We cleaned up the dataset to process it into a format that our model could use.
 
-Link to the dataset: https://github.com/irinagain/Awesome-CGM/wiki/Anderson-(2016)
+A key feature of this dataset was that it was data collected by a glucose monitor, which would be similiar to data diabetes patiends could easily upload from their devices in utilizing our model. By training our model on this dataset and confirming its efficacy, we wanted to prove that it would be expandable to other patients' data as well.
+
+For access to this dataset, please follow the link: https://github.com/irinagain/Awesome-CGM/wiki/Anderson-(2016)
 
 ## Training
-We implemented the model in Python and ran it on Google Colab for training. Once trained, we could generate graphs of the predictions for review. 
+To train our model, we wrote the program in Python and conducted training on Google Colab. Once the model was finished, we could have it predict future values for validation.
 
 ## Verification
-But how do we know if our predictions are valid (other than that they "look good?")
+To ensure the validity of our predictions, we use the Clarke Error Grid Analysis (EGA), a widely accepted method developed in 1987 specifically for measuring the quality of blood glucose level predictions. In essense, EGA plots glucose predictions on a graph divided into five regions (Regions A through E). Region A represents accurate predictions, while regions B, C, D, and are increasingly "bad" prediction, with point E being a potentially dangerous misprediction.
 
-The Clarke Error Grid Analysis (EGA), developed in 1987, is used to quantify clinical accuracy of glucose predictions. Many research papers we referenced used EGA to quantify the accuracy of their predictions.
-To oversimplify, the more dots there are in region A in the graph, the better (regions B, C, D, and E less so--with point E being a particularly dangerous misprediction.)
-
-More on the EGA:
+For more information on the EGA, please consult the following resources
 NHS: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7196876/
 
 Wikipedia: https://en.wikipedia.org/wiki/Clarke_Error_Grid
 
-If we see that most of our values are in Zone A, we will be able to confirm that our prediction fairly accurate.
+If we observe that the values our model predicted are mostly in Region A, it would provide strong evidence for the effectiveness of our model.
 
 # Results and Interpretation
 Now let's see how we did!
