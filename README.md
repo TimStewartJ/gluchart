@@ -39,7 +39,8 @@ To train our model, we wrote the program in Python and conducted training on Goo
 ## Verification
 To ensure the validity of our predictions, we use the Clarke Error Grid Analysis (EGA), a widely accepted method developed in 1987 specifically for measuring the quality of blood glucose level predictions. In essense, EGA plots glucose predictions on a graph divided into five regions (Regions A through E). Region A represents accurate predictions, while regions B, C, D, and are increasingly "bad" prediction, with point E being a potentially dangerous misprediction.
 
-For more information on the EGA, please consult the following resources
+For more information on the EGA, please consult the following resources:
+
 NHS: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7196876/
 
 Wikipedia: https://en.wikipedia.org/wiki/Clarke_Error_Grid
