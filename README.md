@@ -69,8 +69,8 @@ For increased time intervals into the future, however, the reliability of our mo
 
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/e006aaed-69ca-4259-b25c-a05b3fe1bbdf)
 
-
 And the same, this time for a 2-hour prediction:
+
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/3e8212e0-4111-4a56-bce1-60d2ef6d6935)
 
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/1130d1e8-ca93-4897-b1ce-ec9491a9909b)
