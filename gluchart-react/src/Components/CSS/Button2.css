@@ -13,3 +13,7 @@
     color: white;
     font-weight: 400;
 }
+
+.tab2:hover{
+    box-shadow: 0px 4px 20px rgb(205, 205, 205);
+}
