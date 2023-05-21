@@ -74,9 +74,8 @@ By having a reliable prediction of glucose value in the short-term, patients can
 Here is what our friend Aidan had to say about Gluchart:
 "Within the first few months after adopting this disability, no aspect generates more stress or hesitance than the frequent decision-making process which occurs on a daily basis. Being able to test the ramifications of your choices in real time not only offers a level of reliability which removes mental burden, but helps in teaching you how to best take care of yourself in an educated manner."
 
-Going forward, we want to make our model be able to predict more accurately for longer lengths of time. Aidan talked about how he would have to get up in the middle of the night because his glucose levels had dropped too low--if we are able to predict up to several hours, it could aid insulin injection for the long term.
-Additionally, our current version works by maintaining the user's glucose data in a .csv format (in the examples discussed above, this .csv was from the Anderson data.) While many glucose monitors have an option for the user to export their data as a .csv, we want to streamline this process more. A working "Connect to Dexcom/Fitbit" function that seamlessly connects the user's data to generate predictions would improve the user's experience.
-
-For now, we hope that Dexcom will be of use for our friend Aidan--and anybody adjusting through the challenges of diabetes. 
+Going forward, we want to make our model be able to predict more accurately for longer lengths of time in the future
+For now,
+Dexom connect feature talk abiut
 
 
