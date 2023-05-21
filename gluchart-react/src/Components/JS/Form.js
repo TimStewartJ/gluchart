@@ -4,7 +4,9 @@ import Button from './Button'
 import Button2 from './Button2'
 
 export default function Form() {
+    // default button pressed is glucose
     const [activeButton, setActiveButton] = useState('Glucose');
+
     const [glucoseValue, setGlucoseValue] = useState('');
     const [insulinValue, setInsulinValue] = useState('');
     const [mealValue, setMealValue] = useState('');
@@ -39,9 +41,9 @@ export default function Form() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Access the variables (glucoseValue, insulinValue, mealValue) here based on the button pressed
-        console.log('Glucose:', glucoseValue);
-        console.log('Insulin:', insulinValue);
-        console.log('Meal:', mealValue);
+        // console.log('Glucose:', glucoseValue);
+        // console.log('Insulin:', insulinValue);
+        // console.log('Meal:', mealValue);
     
         // sets values to value entered in tab
         switch (activeButton) {
