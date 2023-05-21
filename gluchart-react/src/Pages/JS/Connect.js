@@ -17,12 +17,13 @@ const Connect = () => {
         <div className="icon" onClick={handleMenuToggle}>
           <img src={Hamburger} alt="Hamburger" />
         </div>
-
-        <h2>Connect</h2>
-        <div className="connect-buttons">
-          <button className='bootons'>Dexcom</button>
-          <button className='bootons'>Fitbit</button>
-          <button className='bootons'>Upload CSV</button>
+        <div className="stuffs">
+          <h2>Connect</h2>
+          <div className="connect-buttons">
+            <button className='bootons'>Dexcom</button>
+            <button className='bootons'>Fitbit</button>
+            <button className='bootons'>Upload CSV</button>
+          </div>
         </div>
       </div>
 

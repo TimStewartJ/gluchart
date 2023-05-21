@@ -20,7 +20,7 @@ h2{
 }
 .bootons{
     margin: '0 10px';
-    padding: 20px 100px 20px 100px;
+    padding: 20px 50px;
     margin-bottom: 27px;
     border-radius: 20px;
     box-shadow: 0px 4px 30px rgba(11, 11, 11, 0.196);
@@ -29,10 +29,16 @@ h2{
     background-color: var(--light-blue);
     color: white;
     border: none;
+    width: 300px;
 }
+
 .connect_buttons{
     padding-top: 100px;
     display: flex;
 
+    text-align: center;
+}
+
+.stuffs {
     text-align: center;
 }
