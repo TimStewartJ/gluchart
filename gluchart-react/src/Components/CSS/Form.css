@@ -49,9 +49,10 @@ html, body {
     border: 1px solid rgba(87, 115, 131, 0.5);
     border-radius: 10px;
     width: 202px;
-    height: 30px;
+    height: 40px;
     font-family: articulat-cf, sans-serif;
     font-style: normal;
     font-weight: 300;
+    font-size: 24px;
     color: var(--turqoise);
 }
