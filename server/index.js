@@ -20,9 +20,9 @@ app.post('/score', (req, res) => {
         },
         body: req.body
         })
-        .then((response) =>
-        {
-            res.send(response)
+        .then((response) => response.json())
+        .then((data) => {
+            res.send({test: "joe mama", output: data})
         })
 })
 
