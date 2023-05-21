@@ -11,8 +11,12 @@ export default function Form() {
     const [insulinValue, setInsulinValue] = useState('');
     const [mealValue, setMealValue] = useState('');
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleButtonClick = (buttonText) => {
-        setActiveButton(buttonText);
+        if (!isLoading) {
+            setActiveButton(buttonText);
+        }
     };
 
     const handleInputChange = (event) => {
@@ -38,12 +42,17 @@ export default function Form() {
         }
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        setIsLoading(true); // Activate loading state
+
+        // Simulate an asynchronous operation (e.g., API request) using setTimeout
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+
         // Access the variables (glucoseValue, insulinValue, mealValue) here based on the button pressed
-        // console.log('Glucose:', glucoseValue);
-        // console.log('Insulin:', insulinValue);
-        // console.log('Meal:', mealValue);
+        console.log('Glucose:', glucoseValue);
+        console.log('Insulin:', insulinValue);
+        console.log('Meal:', mealValue);
     
         // sets values to value entered in tab
         switch (activeButton) {
@@ -63,6 +72,8 @@ export default function Form() {
         setGlucoseValue('');
         setInsulinValue('');
         setMealValue('');
+
+        setIsLoading(false);
     };
 
     return (
@@ -73,21 +84,21 @@ export default function Form() {
                 active={activeButton === 'Glucose'}
                 backColor="var(--turqoise)" // Set the desired color for the active button
                 fontColor="white"
-                onClick={handleButtonClick}
+                onClick={handleButtonClick} disabled={isLoading} 
                 />
                 <Button
                 text="Meal"
                 active={activeButton === 'Meal'}
                 backColor="var(--turqoise)" // Set the desired color for the active button
                 fontColor="white"
-                onClick={handleButtonClick}
+                onClick={handleButtonClick} disabled={isLoading} 
                 />
                 <Button
                 text="Insulin"
                 active={activeButton === 'Insulin'}
                 backColor="var(--turqoise)" // Set the desired color for the active button
                 fontColor="white"
-                onClick={handleButtonClick}
+                onClick={handleButtonClick} disabled={isLoading} 
                 />
             </div>
 
@@ -105,8 +116,8 @@ export default function Form() {
             onChange={handleInputChange}></input>
 
             <div className="bottom-buttons">
-                <Button2 text="predict" color="var(--sage-green)" onClick={handleSubmit}/>
-                <Button2 text="submit" color="var(--light-blue)" onClick={handleSubmit} />
+                <Button2 text="predict" color={isLoading ? 'gray' : 'var(--sage-green)'} onClick={!isLoading ? handleSubmit : undefined} disabled={isLoading} />
+                <Button2 text="submit" color={isLoading ? 'gray' : 'var(--turqoise)'} onClick={!isLoading ? handleSubmit : undefined} disabled={isLoading} />
             </div>
         </div>
     );
