@@ -8,6 +8,7 @@ import Navbar from '../../Components/JS/Navbar';
 import { useEffect } from 'react';
 import X from '../../close.png'
 import Logo from '../../Logo.png'
+import firstColumn from '../../util';
 
 const Home = () =>
 {
@@ -24,17 +25,13 @@ const Home = () =>
       {
         console.log(data)
         setMasterInput(data)
+        setResults({curr: firstColumn(data.data, -7, undefined), pred: [firstColumn(data.data, -1, undefined),null,null,null,null]})
       })
   }, [])
 
   const handleMenuToggle = () =>
   {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleFormSubmit = (formResults) =>
-  {
-    setResults(formResults); // Update the results state with the form data
   };
 
   return (
@@ -78,7 +75,7 @@ const Home = () =>
       )}
 
       <div className={`input-div ${isMenuOpen ? 'menu-open' : ''}`}>
-        <Input onSubmit={handleFormSubmit} input={masterInput} setMasterInput={setMasterInput} setBloodSugar={setBloodSugar} /> {/* Pass the onSubmit handler to the Form component */}
+        <Input onSubmit={setResults} input={masterInput} setMasterInput={setMasterInput} setBloodSugar={setBloodSugar} /> {/* Pass the onSubmit handler to the Form component */}
       </div>
 
       {isMenuOpen && <Navbar />}
