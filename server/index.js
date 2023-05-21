@@ -18,7 +18,7 @@ app.post('/score', (req, res) => {
         headers: {
             'Content-Type': "application/json",
             'authorization': ('Bearer ' + api_key),
-            'azureml-model-deployment': 'glucose-defaults-model-3',
+            'azureml-model-deployment': 'glucose-defaults-model',
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
         },
