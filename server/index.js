@@ -1,13 +1,14 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3001
-const api_key = require('/home/api_key.json')['key']
+// const api_key = require('/home/api_key.json')['key']
 
 app.get('/', (req, res) => {
   res.send('Hello World!' + api_key)
 })
 
 app.post('/score', (req, res) => {
+    const api_key = "joe mama"
     fetch("https://gluchartwrapper.azure-api.net/score",
     {
         method: "post",
