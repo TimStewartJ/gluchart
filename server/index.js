@@ -4,7 +4,7 @@ const port = process.env.PORT || 3001
 const api_key = require('/home/api_key.json')['key']
 
 app.get('/', (req, res) => {
-  res.send('Hello World!' + api_key)
+  res.send('Hello World!')
 })
 
 app.post('/score', (req, res) => {
