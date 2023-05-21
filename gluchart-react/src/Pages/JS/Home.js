@@ -12,6 +12,7 @@ const Home = () =>
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [results, setResults] = useState({ curr: [69, 420], pred: [420, 69] }); // State to hold the form results
   const [masterInput, setMasterInput] = useState(null);
+  const [bloodSugar, setBloodSugar] = useState(140);
 
   useEffect(() =>
   {
@@ -47,7 +48,7 @@ const Home = () =>
 
         <div className="blood-sugar">
           <p className="thin" style={{ marginBottom: '0px' }}>current blood sugar</p>
-          <p className="normal">140</p>
+          <p className="normal">{bloodSugar}</p>
           <p className="thin" style={{ marginTop: '0px' }}>mg/dL</p>
         </div>
       </div>
@@ -65,7 +66,7 @@ const Home = () =>
       )}
 
       <div className={`input-div ${isMenuOpen ? 'menu-open' : ''}`}>
-        <Input onSubmit={handleFormSubmit} inputData={masterInput} /> {/* Pass the onSubmit handler to the Form component */}
+        <Input onSubmit={handleFormSubmit} input={masterInput} setMasterInput={setMasterInput} setBloodSugar={setBloodSugar} /> {/* Pass the onSubmit handler to the Form component */}
       </div>
 
       {isMenuOpen && <Navbar />}

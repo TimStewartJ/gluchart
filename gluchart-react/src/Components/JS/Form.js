@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../CSS/Form.css'
 import Button from './Button'
 import Button2 from './Button2'
@@ -14,6 +14,7 @@ export default function Form(props)
 
   // state to hold if loading
   const [isLoading, setIsLoading] = useState(false);
+
 
   const handleButtonClick = (buttonText) =>
   {
@@ -48,19 +49,10 @@ export default function Form(props)
     }
   };
 
-  // Write separate handleSubmit 
-
-  // Button for submitting user input
-  const handleSubmit = async (event) =>
-  {
-    event.preventDefault();
+  const makePrediction = async (data) => {
     setIsLoading(true);
 
-    // By this point: one of mealValue, insulinValue, glucoseValue returns
-    // One value
-
-    //console.log(props.inputData)
-    let submissionData = props.inputData.data
+    let submissionData = data
     //submissionData = submissionData.slice(0, 500)
     // submissionData.at(-1)[0] = +glucoseValue
     submissionData.at(-3)[1] = +mealValue
@@ -107,7 +99,7 @@ export default function Form(props)
     switch (activeButton)
     {
       case 'Glucose':
-        props.BloodSugar(glucoseValue);
+        props.setBloodSugar(+glucoseValue);
         setGlucoseValue('');
         break;
       case 'Insulin':
@@ -124,6 +116,24 @@ export default function Form(props)
     // Send to azure fetch
 
     setIsLoading(false);
+  }
+
+  // Write separate handleSubmit 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (activeButton == 'Glucose') {
+      props.input.data.push([+glucoseValue, 0, 0, 0, 0])
+      makePrediction(props.input.data)
+      props.setMasterInput(props.input)
+    }
+  }
+
+  // Button for submitting user input
+  const handlePredict = async (event) =>
+  {
+    event.preventDefault();
+    makePrediction(props.input.data)
   };
 
   let label = 'insert mg/dL';
@@ -175,7 +185,7 @@ export default function Form(props)
         onChange={handleInputChange}></input>
 
       <div className="bottom-buttons">
-        <Button2 text="predict" color={isLoading ? 'gray' : 'var(--sage-green)'} onClick={!isLoading ? handleSubmit : undefined} disabled={isLoading} />
+        <Button2 text="predict" color={isLoading ? 'gray' : 'var(--sage-green)'} onClick={!isLoading ? handlePredict : undefined} disabled={isLoading} />
         <Button2 text="submit" color={isLoading ? 'gray' : 'var(--turqoise)'} onClick={!isLoading ? handleSubmit : undefined} disabled={isLoading} />
       </div>
     </div>
