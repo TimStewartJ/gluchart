@@ -11,16 +11,16 @@ export default function Graph({ results }) {
       labels: ["-30", "-25", "-20", "-15", "-10", "-5", "0", "5", "10", "15", "20", "25", "30"],
       datasets: [
         {
-          data: [8, 7.8, 6, 8, 7, 5, 6, null],
+          data: [155, 150, 178, 160, 157, 155, 140, null],
           borderColor: "black",
         },
         {
-          data: results || [null, null, null, null, null, null, 6, 8, 7, 6, 7, 5, 6.6],
+          data: results || [null],
           borderColor: "green",
         },
       ],
     };
-    
+
     const options = {
       responsive: true,
       maintainAspectRatio: false,

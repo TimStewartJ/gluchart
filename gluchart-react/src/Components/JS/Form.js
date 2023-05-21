@@ -50,7 +50,7 @@ export default function Form(props) {
         try {
           const results = await new Promise((resolve, reject) => {
             setTimeout(() => {
-              resolve([null, null, null, null, null, null, 6, 8, Math.floor(Math.random() * 7), Math.floor(Math.random() * 7), Math.floor(Math.random() * 7), Math.floor(Math.random() * 7), Math.floor(Math.random() * 7)]);
+              resolve([null, null, null, null, null, null, 140, Math.floor(Math.random() * 40)+140, Math.floor(Math.random() * 40)+140, Math.floor(Math.random() * 40)+140, Math.floor(Math.random() * 40)+140, Math.floor(Math.random() * 40)+140, Math.floor(Math.random() * 40)+140]);
             }, 2000);
           });
       
