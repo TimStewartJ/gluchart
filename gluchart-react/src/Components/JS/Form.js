@@ -106,9 +106,7 @@ export default function Form(props) {
 
             <hr className="divider"></hr>
 
-            <label htmlFor="input" className="grams">insert grams
-                {isLoading && <span className="loader" />}
-            </label>
+            <label htmlFor="input" className="grams">insert grams</label>
             <input type="number" id="input" name="grams" className="grams-input" 
                 value={
                     activeButton === 'Glucose'
