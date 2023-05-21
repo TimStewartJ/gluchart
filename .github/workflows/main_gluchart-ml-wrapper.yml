@@ -22,8 +22,7 @@ jobs:
           node-version: '18.x'
 
       - name: npm install, build, and test
-        run: |
-          npm install
+        run: npm install
         working-directory: server
 
       - name: Zip artifact to upload
@@ -33,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-server
-          path: .
+          path: ${{ env.ZIP_NAME }}
 
   deploy:
     runs-on: ubuntu-latest
