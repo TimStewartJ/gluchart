@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import '../CSS/Home.css';
-import Hamburger from '../../menu.png';
-import Graph from '../../Components/JS/Graph';
-import Input from '../../Components/JS/Form';
-import Navbar from '../../Components/JS/Navbar';
+import './Home.css';
+import Hamburger from './menu.png';
+import Graph from '../src/Components/JS/Graph';
+import Input from './Components/JS/Form';
 
-const Home = () => {
+export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -14,8 +13,6 @@ const Home = () => {
 
   return (
     <div className="main-div">
-      <Navbar isMenuOpen={isMenuOpen} />
-
       <div className={`home-div ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="icon" onClick={handleMenuToggle}>
           <img src={Hamburger} alt="Hamburger" />
@@ -32,11 +29,21 @@ const Home = () => {
         </div>
       </div>
 
+      <div className={`overlay ${isMenuOpen ? 'overlay-open' : ''}`} onClick={handleMenuToggle}>
+        <div className="menu-options">
+            <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/connect">Connect</a></li>
+            <li><a href="/settings">Settings</a></li>
+            </ul>
+            <div className="overlay-text">
+            </div>
+        </div>
+    </div>
+
       <div className={`input-div ${isMenuOpen ? 'menu-open' : ''}`}>
         <Input />
       </div>
     </div>
   );
-};
-
-export default Home;
+}
