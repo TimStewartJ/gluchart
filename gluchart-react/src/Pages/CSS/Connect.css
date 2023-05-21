@@ -1,4 +1,4 @@
-.whole_div{
+.funny-div{
     background-color: var(--turqoise);
     display: flex;
     flex-direction: column;
@@ -41,4 +41,10 @@ h2{
 
 .stuffs {
     text-align: center;
+}
+
+.home2-div {
+    flex-grow: 1;
+    /* min-height: 100vh; */
+    padding: 30px;
 }

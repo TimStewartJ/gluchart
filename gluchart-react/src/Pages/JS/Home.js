@@ -6,6 +6,8 @@ import Graph from '../../Components/JS/Graph';
 import Input from '../../Components/JS/Form';
 import Navbar from '../../Components/JS/Navbar';
 import { useEffect } from 'react';
+import X from '../../close.png'
+import Logo from '../../Logo.png'
 
 const Home = () =>
 {
@@ -38,8 +40,18 @@ const Home = () =>
   return (
     <div className="main-div">
       <div className={`home-div ${isMenuOpen ? 'menu-open' : ''}`}>
-        <div className="icon" onClick={handleMenuToggle}>
-          <img src={Hamburger} alt="Hamburger" />
+        <div className="header">
+          <div className="logo-container">
+            <img src={Logo} alt="Logo" className="logo" />
+          </div>
+
+          <div className="icon" onClick={handleMenuToggle}>
+            {isMenuOpen ? (
+              <img src={X} alt="Close" />
+            ) : (
+              <img src={Hamburger} alt="Hamburger" />
+            )}
+          </div>
         </div>
 
         <h2>Welcome Suzie,</h2>

@@ -7,6 +7,17 @@ body, html {
     flex-direction: column;
     min-height: 100vh;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
 .home-div {
     background-color: var(--sage-green);
     flex-grow: 1;
@@ -21,6 +32,8 @@ body, html {
     text-align: right;
     position: relative;
     z-index: 1000;
+    font-size: 25px;
+    color: white;
   }
 
 h2 {
