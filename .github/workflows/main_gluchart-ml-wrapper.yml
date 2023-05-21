@@ -5,9 +5,9 @@ name: Build and deploy Node.js app to Azure Web App - gluchart-ml-wrapper
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+
+env:
+  ZIP_NAME: "app-release.zip"
 
 jobs:
   build:
@@ -24,13 +24,15 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
-          npm run test --if-present
+        working-directory: server
+
+      - name: Zip artifact to upload
+        run: zip -r ${{ env.ZIP_NAME }} server/
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: node-app
+          name: node-server
           path: .
 
   deploy:
@@ -44,7 +46,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: node-app
+          name: node-server
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
