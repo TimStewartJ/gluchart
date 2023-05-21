@@ -48,21 +48,22 @@ Wikipedia: https://en.wikipedia.org/wiki/Clarke_Error_Grid
 If we observe that the values our model predicted are mostly in Region A, it would provide strong evidence for the effectiveness of our model.
 
 # Results and Interpretation
-Now let's see how we did!
-This is what our model predicted would happen 30 minutes from now,  given that no meals/insulin intakes occurred.
+To test the accuracy of our model, we had it generate predictions for 30 minutes from a given point in the data set, assumoing that no meals or insulin intake occurred.
 
-The predictions (red) are on top of the actual values (black):
+The graph below displays the predicted values (red) overlaid on the actual values (black) from the data set:
 
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/2ca9e9d6-e1ff-4734-8c10-9373fc01d9bc)
 
-And here is the Clarke error grid, along with a pie chart with the percentages for each zone:
+We also generated a Clark Error Grid for the predictions. Below is the Clark Grid along with a pie chart visualization.
+
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/72e6c267-4dfa-4066-8ab7-4627903a2154)
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/affbd5b9-fcfa-46af-9d94-5e83e2dd4af2)
 
-We see that 95.5% of our predictions are within Zone A, while close to none are in Zones C~E, validating the quality and accuracy of our predictions!
-The more farther into the future we tried to predict, the less accurate it was. Predicting two hours into the future, only around 50% of
-our values were in Zone A, rendering our predictions less useful and more importantly, dangerous. After experimenting with various prediction intervals into the future, 
-we concluded that we were most confident about the 30 minute predictions.
+We see that 95.5% of our predictions are within Zone A, while close to none are in Zones C~E, indicating a high level of reliability and effectiveness for our model.
+
+For increased time intervals into the future, however, the reliability of our model decreased. (Include graphs for 1 hour)
+
+After conducting various trails with different intervals, we decided that our model was most reliable when predicting up to 30 minutes ahead. 
 
 # Conclusion & Going Forward
 Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
@@ -71,8 +72,7 @@ By having a reliable prediction of glucose value in the short-term, patients can
 Here is what our friend Aidan had to say about Gluchart:
 "Within the first few months after adopting this disability, no aspect generates more stress or hesitance than the frequent decision-making process which occurs on a daily basis. Being able to test the ramifications of your choices in real time not only offers a level of reliability which removes mental burden, but helps in teaching you how to best take care of yourself in an educated manner."
 
-Going forward, we want to make our model be able to predict more accurately for longer lengths of time in the future
-For now,
-Dexom connect feature talk abiut
+Going forward, we want to make our model be able to predict more accurately for longer lengths of time in the future. Aidan talked about how he would have to wake up in the middle of the night because his glucose levels were dangerously low. Having reliable predictions hours into the future could address this issue. Additionally, our model currently requires the user to input their glucose data in a .csv file. While many glucose monitors have a stremedlined process for obtaining monitored values, we could further improve the user experience by allowing users to connect their glucose monitoring devices with our model.
+
 
 
