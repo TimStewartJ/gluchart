@@ -24,6 +24,7 @@ body, html {
 h2 {
     font-family: 'Red Hat Display';
     color: white;
+    margin-top: 30px;
 }
 
 .blood-sugar {

@@ -1,6 +1,9 @@
 .graph {
-    height: 100%;
+    /* height: 100%; */
     background-color: white;
     border-radius: 20px;
     color: transparent;
+}
+.chart{
+    padding: 30px;
 }

@@ -1,32 +1,24 @@
 import React, { useEffect, useRef } from "react";
 import "../CSS/Graph.css";
-
-// import { Line } from "react-chartjs-2";
-import ChartJS, {
-//   Chart as ChartJS,
-//   LineElement,
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-} from "chart.js/auto";
-
-// ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
+import ChartJS from "chart.js/auto";
 
 export default function Graph() {
   const ref = useRef();
-  // const ctx = document.getElementById('myChart');
 
   useEffect(() => {
     if (!ref.current) return;
     const data = {
-      labels: ["May 12", "May 13", "May 14", "May 15", "May 16", "May 17"],
+      labels: ["30mins", "25mins", "20mins", "15mins", "10mins", "5mins"],
       datasets: [
         {
           data: [8, 7.8, 6, 8, 7, 5, 6],
         },
       ],
     };
-    const options = {};
+    const options = {
+      responsive: true,
+      maintainAspectRatio: false,
+    };
     const chart = new ChartJS(ref.current, {
       type: "line",
       data,
@@ -34,15 +26,13 @@ export default function Graph() {
     });
 
     return () => {
-        chart.destroy()
-      // remove the chart
+      chart.destroy();
     };
-  }, [ref]);
+  }, []);
 
   return (
     <div className="graph">
-      <canvas id="myChart" ref={ref} />
-      {/* <Line data={data} option = {options}></Line> */}
+      <canvas ref={ref} style={{ width: "100%", height: "300px" }} />
     </div>
   );
 }
