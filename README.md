@@ -40,6 +40,7 @@ More can be read about EGA here: https://en.wikipedia.org/wiki/Clarke_Error_Grid
 We trained an LSTM model on the Anderson data to predict up to 30 minutes in the future. 
 Here are the predictions (red) on top of the actual values (black):
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/2ca9e9d6-e1ff-4734-8c10-9373fc01d9bc)
+
 And here is the Clarke error grid, along with a pie chart with the percentages for each zone:
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/72e6c267-4dfa-4066-8ab7-4627903a2154)
 ![image](https://github.com/TimStewartJ/gluchart/assets/24793742/affbd5b9-fcfa-46af-9d94-5e83e2dd4af2)
