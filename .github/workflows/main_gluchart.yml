@@ -29,7 +29,8 @@ jobs:
         working-directory: gluchart-react
 
       - name: Zip artifact to upload
-        run: zip -r ${{ env.ZIP_NAME }} .
+        run: zip -r ${{ env.ZIP_NAME }} build/
+        working-directory: gluchart-react
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
