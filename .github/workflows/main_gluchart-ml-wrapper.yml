@@ -25,14 +25,11 @@ jobs:
         run: npm install
         working-directory: server
 
-      - name: Zip artifact to upload
-        run: zip -r ${{ env.ZIP_NAME }} server/
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-server
-          path: ${{ env.ZIP_NAME }}
+          path: server/
 
   deploy:
     runs-on: ubuntu-latest
