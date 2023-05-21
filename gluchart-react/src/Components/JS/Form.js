@@ -59,44 +59,69 @@ export default function Form(props)
     // By this point: one of mealValue, insulinValue, glucoseValue returns
     // One value
 
-    // Fetch code here to deliver it to azure
+    //console.log(props.inputData)
+    let submissionData = props.inputData.data
+    //submissionData = submissionData.slice(0, 500)
+    // submissionData.at(-1)[0] = +glucoseValue
+    submissionData.at(-3)[1] = +mealValue
+    submissionData.at(-3)[4] = +insulinValue
 
-    try
-    {
-      // replace this with the code that gets the results array from azure
-      const results = await new Promise((resolve, reject) =>
+    //console.log(submissionData.at(-1))
+
+    //console.log(JSON.stringify(submissionData))
+
+    await fetch("https://gluchart-ml-wrapper.azurewebsites.net/score",
       {
-        setTimeout(() =>
+        method: "post",
+        headers: {
+          'Content-Type': "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+        },
+        body: JSON.stringify({ data: submissionData })
+      })
+      .then((response) => response.json())
+      .then((data) =>
+      {
+        const output = data.output
+        console.log(output)
+        const current_input = []
+
+        // last 6 of master submission data
+        const sliced_input = submissionData.slice(-7)
+
+        // get first element in last 6 of submission data (aka the 6 most recent CGM readings)
+        sliced_input.forEach(element =>
         {
-          resolve([null, null, null, null, null, null, 140, Math.floor(Math.random() * 40) + 140, Math.floor(Math.random() * 40) + 140, Math.floor(Math.random() * 40) + 140, Math.floor(Math.random() * 40) + 140, Math.floor(Math.random() * 40) + 140, Math.floor(Math.random() * 40) + 140]);
-        }, 2000);
-      });
+          current_input.push(element[0])
+        });
 
-      console.log(results);
-      props.onSubmit(results)
+        const pred_output = output.at(-1)
+        pred_output.unshift(current_input.at(-1))
 
-          if (activeButton === 'Glucose') {
-            props.BloodSugar(glucoseValue);
-          }
+        console.log(pred_output)
 
-      switch (activeButton)
-      {
-        case 'Glucose':
-          setGlucoseValue('');
-          break;
-        case 'Insulin':
-          setInsulinValue('');
-          break;
-        case 'Meal':
-          setMealValue('');
-          break;
-        default:
-          break;
-      }
-    } catch (error)
+        props.onSubmit({ curr: current_input, pred: pred_output })
+      })
+
+    switch (activeButton)
     {
-      console.error(error);
+      case 'Glucose':
+        props.BloodSugar(glucoseValue);
+        setGlucoseValue('');
+        break;
+      case 'Insulin':
+        setInsulinValue('');
+        break;
+      case 'Meal':
+        setMealValue('');
+        break;
+      default:
+        break;
     }
+
+    // Edit master array
+    // Send to azure fetch
 
     setIsLoading(false);
   };
