@@ -126,11 +126,13 @@ export default function Form(props)
     setIsLoading(false);
   };
 
-  let label = 'insert mg/dL';
-  if (activeButton === 'Meal') {
-    label = 'insert grams';
-  } else if (activeButton === 'Insulin') {
-    label = 'insert milliliters';
+  let label = 'Insert mg/dL';
+  if (activeButton === 'Meal')
+  {
+    label = 'Insert grams';
+  } else if (activeButton === 'Insulin')
+  {
+    label = 'Insert units of insulin';
   }
 
   return (

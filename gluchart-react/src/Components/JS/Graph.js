@@ -7,6 +7,7 @@ export default function Graph({ results })
   const ref = useRef();
   const chartRef = useRef(null);
 
+
   useEffect(() =>
   {
     const predGraphData = []
