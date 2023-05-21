@@ -8,11 +8,16 @@ export default function Graph() {
   useEffect(() => {
     if (!ref.current) return;
     const data = {
-      labels: ["30", "25", "20", "15", "10", "5"],
+      labels: ["-30", "-25", "-20", "-15", "-10", "-5", "0", "5", "10", "15", "20", "25", "30"],
       datasets: [
         {
-          data: [8, 7.8, 6, 8, 7, 5, 6],
+          data: [8, 7.8, 6, 8, 7, 5, 6, null],
+          borderColor: "black",
         },
+        {
+            data: [null, null, null, null, null, null, 6, 8, 7, 6, 7, 5, 6.6],
+            borderColor: "green",
+        }
       ],
     };
     const options = {
