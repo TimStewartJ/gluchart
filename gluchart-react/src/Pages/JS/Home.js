@@ -4,16 +4,32 @@ import Hamburger from '../../menu.png';
 import Graph from '../../Components/JS/Graph';
 import Input from '../../Components/JS/Form';
 import Navbar from '../../Components/JS/Navbar';
+import { useEffect } from 'react';
 
-const Home = () => {
+const Home = () =>
+{
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [results, setResults] = useState(null); // State to hold the form results
+  const [results, setResults] = useState({ curr: [69, 420], pred: [420, 69] }); // State to hold the form results
+  const [masterInput, setMasterInput] = useState(null);
 
-  const handleMenuToggle = () => {
+  useEffect(() =>
+  {
+    fetch("https://gluchart-ml-wrapper.azurewebsites.net/init")
+      .then((response) => response.json())
+      .then((data) =>
+      {
+        console.log(data)
+        setMasterInput(data)
+      })
+  }, [])
+
+  const handleMenuToggle = () =>
+  {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleFormSubmit = (formResults) => {
+  const handleFormSubmit = (formResults) =>
+  {
     setResults(formResults); // Update the results state with the form data
   };
 
@@ -50,7 +66,7 @@ const Home = () => {
       </div>
 
       <div className={`input-div ${isMenuOpen ? 'menu-open' : ''}`}>
-        <Input onSubmit={handleFormSubmit} /> {/* Pass the onSubmit handler to the Form component */}
+        <Input onSubmit={handleFormSubmit} inputData={masterInput} /> {/* Pass the onSubmit handler to the Form component */}
       </div>
     </div>
   );

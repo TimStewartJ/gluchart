@@ -2,20 +2,32 @@ import React, { useEffect, useRef } from "react";
 import "../CSS/Graph.css";
 import ChartJS from "chart.js/auto";
 
-export default function Graph({ results }) {
+export default function Graph({ results })
+{
   const ref = useRef();
   const chartRef = useRef(null);
 
-  useEffect(() => {
+  useEffect(() =>
+  {
+    const predGraphData = []
+    for (let i = 0; i < results.curr.length - 1; i++)
+    {
+      predGraphData.push(null)
+    }
+    results.pred.forEach(element =>
+    {
+      predGraphData.push(element)
+    });
+
     const initialGraphData = {
       labels: ["-30", "-25", "-20", "-15", "-10", "-5", "0", "5", "10", "15", "20", "25", "30"],
       datasets: [
         {
-          data: [155, 150, 178, 160, 157, 155, 140, null],
+          data: results.curr,
           borderColor: "black",
         },
         {
-          data: results || [null],
+          data: predGraphData,
           borderColor: "green",
         },
       ],
@@ -69,22 +81,26 @@ export default function Graph({ results }) {
       },
     };
 
-    if (!chartRef.current) {
+    if (!chartRef.current)
+    {
       // Create the chart if it doesn't exist
       chartRef.current = new ChartJS(ref.current, {
         type: "line",
         data: initialGraphData,
         options,
       });
-    } else {
+    } else
+    {
       // Update the chart data and options if it exists
       chartRef.current.data = initialGraphData;
       chartRef.current.options = options;
       chartRef.current.update();
     }
 
-    return () => {
-      if (chartRef.current) {
+    return () =>
+    {
+      if (chartRef.current)
+      {
         // Destroy the chart instance on component cleanup
         chartRef.current.destroy();
         chartRef.current = null;

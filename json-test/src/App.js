@@ -15,6 +15,15 @@ function App()
     setFile(e.target.files[0]);
   };
 
+  function interactWithAzure()
+  {
+    // Get the three inputs
+    // Interface with the 2d json array, edit it, and give it to azure
+    // Recieve results
+    // Parse it into results data array
+    // That will graph it.
+  }
+
   const handleOnSubmit = (e) =>
   {
     e.preventDefault();
