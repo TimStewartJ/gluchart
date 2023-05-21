@@ -7,9 +7,9 @@ being produced in the pancrease, patients with diabetes must regulate their gluc
 
 About two months ago, our friend and fellow Aggie Aidan was diagnosed with Type I diabetes. Since then, he's told us about his struggles in self-administering insulin.
 He would inject insulin before a meal, only to find out shortly after that it was an insufficient dosage and have to self-administer again. Worse yet was when he would
-overshoot and administer too much insulin, bringing his glucose levels to dangerously low levels that could induce a coma.
+overshoot and administer too much insulin, bringing his glucose levels to dangerously low levels that could induce a coma. Often he would have to anxiously sit and wait, hoping that his insulin levels would be back within a safe range after readjusting his dose.
 
-We wanted to create an application that could aid Aidan, fellow Aggies, and anyone adjusting to diabetes by showing their glucose levels ahead of time. Our model would be trained on a user's data, and be able to predict their glucose for a set amount of time. 
+We wanted to create an application that could aid Aidan, fellow Aggies, and anyone adjusting to diabetes by showing their glucose levels ahead of time. Our model would be trained on a user's data, and be able to predict their glucose for a set amount of time. If successful, it would enhance insulin dosing accuracies for patients and help them avoid having to readjust, ultimately improving their quality of life.
 
 # Goals
 Create a glucose prediction model using machine learning that can accurately forecast a person's glucose levels given their current glucose level and an input of insulin/meal.
