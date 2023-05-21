@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../CSS/Form.css'
 import Button from './Button'
 import Button2 from './Button2'
+import firstColumn from '../../util';
 
 export default function Form(props)
 {
@@ -77,16 +78,7 @@ export default function Form(props)
       {
         const output = data.output
         console.log(output)
-        const current_input = []
-
-        // last 6 of master submission data
-        const sliced_input = submissionData.slice(-7)
-
-        // get first element in last 6 of submission data (aka the 6 most recent CGM readings)
-        sliced_input.forEach(element =>
-        {
-          current_input.push(element[0])
-        });
+        const current_input = firstColumn(submissionData, -7, undefined)
 
         const pred_output = output.at(-1)
         pred_output.unshift(current_input.at(-1))
