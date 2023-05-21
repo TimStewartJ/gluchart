@@ -18,12 +18,18 @@ export default function Form() {
         switch (activeButton) {
           case 'Glucose':
             setGlucoseValue(value);
+            setInsulinValue('');
+            setMealValue('');
             break;
           case 'Insulin':
             setInsulinValue(value);
+            setGlucoseValue('');
+            setMealValue('');
             break;
           case 'Meal':
             setMealValue(value);
+            setInsulinValue('');
+            setGlucoseValue('');
             break;
           default:
             break;
@@ -37,20 +43,24 @@ export default function Form() {
         console.log('Insulin:', insulinValue);
         console.log('Meal:', mealValue);
     
-        // Reset the input value
+        // sets values to value entered in tab
         switch (activeButton) {
           case 'Glucose':
-            setGlucoseValue('');
+            setGlucoseValue(glucoseValue);
             break;
           case 'Insulin':
-            setInsulinValue('');
+            setInsulinValue(insulinValue);
             break;
           case 'Meal':
-            setMealValue('');
+            setMealValue(mealValue);
             break;
           default:
             break;
         }
+
+        setGlucoseValue('');
+        setInsulinValue('');
+        setMealValue('');
     };
 
     return (
@@ -93,8 +103,8 @@ export default function Form() {
             onChange={handleInputChange}></input>
 
             <div className="bottom-buttons">
-                <Button2 text="predict" color="var(--sage-green)" />
-                <Button2 text="submit" color="var(--light-blue)" />
+                <Button2 text="predict" color="var(--sage-green)" onClick={handleSubmit}/>
+                <Button2 text="submit" color="var(--light-blue)" onClick={handleSubmit} />
             </div>
         </div>
     );
