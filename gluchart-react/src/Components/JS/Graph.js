@@ -2,24 +2,25 @@ import React, { useEffect, useRef } from "react";
 import "../CSS/Graph.css";
 import ChartJS from "chart.js/auto";
 
-export default function Graph() {
+export default function Graph({ results }) {
   const ref = useRef();
+  const chartRef = useRef(null);
 
   useEffect(() => {
-    if (!ref.current) return;
-    const data = {
+    const initialGraphData = {
       labels: ["-30", "-25", "-20", "-15", "-10", "-5", "0", "5", "10", "15", "20", "25", "30"],
       datasets: [
         {
           data: [8, 7.8, 6, 8, 7, 5, 6, null],
-          borderColor: "#577383",
+          borderColor: "black",
         },
         {
-            data: [null, null, null, null, null, null, 6, 8, 7, 6, 7, 5, 6.6],
-            borderColor: "#6DA5A6",
-        }
+          data: results || [null, null, null, null, null, null, 6, 8, 7, 6, 7, 5, 6.6],
+          borderColor: "green",
+        },
       ],
     };
+    
     const options = {
       responsive: true,
       maintainAspectRatio: false,
@@ -43,10 +44,11 @@ export default function Graph() {
             display: true,
             text: "minutes",
             padding: {
-                top: 10,
-              },
+              top: 10,
+            },
             font: {
-              size: 12, weight: 600
+              size: 12,
+              weight: 600,
             },
           },
         },
@@ -54,27 +56,41 @@ export default function Graph() {
           display: true,
           title: {
             display: true,
-            text: "mg/DL",
+            text: "mg/dL",
             padding: {
-                bottom: 20,
-              },
+              bottom: 20,
+            },
             font: {
-              size: 12, weight: 600
+              size: 12,
+              weight: 600,
             },
           },
         },
       },
     };
-    const chart = new ChartJS(ref.current, {
-      type: "line",
-      data,
-      options,
-    });
+
+    if (!chartRef.current) {
+      // Create the chart if it doesn't exist
+      chartRef.current = new ChartJS(ref.current, {
+        type: "line",
+        data: initialGraphData,
+        options,
+      });
+    } else {
+      // Update the chart data and options if it exists
+      chartRef.current.data = initialGraphData;
+      chartRef.current.options = options;
+      chartRef.current.update();
+    }
 
     return () => {
-      chart.destroy();
+      if (chartRef.current) {
+        // Destroy the chart instance on component cleanup
+        chartRef.current.destroy();
+        chartRef.current = null;
+      }
     };
-  }, []);
+  }, [results]);
 
   return (
     <div className="graph">
