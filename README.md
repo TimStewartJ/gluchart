@@ -80,12 +80,16 @@ And the same, this time for a 2-hour prediction:
 After trying various intervals, we concluded that our model was best when predicting up to an hour, with it being most reliable around the 30-minute mark.
 
 # Conclusion & Going Forward
-Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
-By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and reduce the risk of over/underinjection, especially when they need to inject insulin before a meal.
+In conclusion, our LSTM model trained on data collected from glucode monitors were able to provide extremely reliable predictions up to 30 minutes, while giving reasonable estimates up to an hour. Having an effective model for short-term blood glucose level prediction helps patients better dose for insulin and reduce the risk of over/underinjectiion
 
-Here is what our friend Aidan had to say about Gluchart:
+Using an LSTM model trained on data obtained from continuous glucose monitors, we were able to accurately predict glucose levels up to 30 minutes in the future. 
+By having a reliable prediction of glucose value in the short-term, patients can better dose for insulin and minimize the risks of over or under-injection, particularly in mealtime scenarios. After seeing how future glucose levels charted out, or how they would change based on a meal or an injection, users could adjust and plan to better ensure their health.
+
+Here is what our friend Aidan had to say about Gluchart and his experiences with diabetes:
 "Within the first few months after adopting this disability, no aspect generates more stress or hesitance than the frequent decision-making process which occurs on a daily basis. Being able to test the ramifications of your choices in real time not only offers a level of reliability which removes mental burden, but helps in teaching you how to best take care of yourself in an educated manner."
 
-Going forward, we want to make our model be able to predict more accurately for longer lengths of time in the future. Aidan talked about how he would have to wake up in the middle of the night because his glucose levels were dangerously low. Having reliable predictions hours into the future could address this issue. Additionally, our model currently requires the user to input their glucose data in a .csv file. While many glucose monitors have a stremedlined process for obtaining monitored values, we could further improve the user experience by allowing users to connect their glucose monitoring devices with our model.
+
+Going forward, our focus is on improving accuracy of predictions for longer time intervals in the future. One of the experiences Aidan shared with us was getting up in the middle of the night due to his blood glucose levels being dangerously low, and this highlights one of many scenarios where reliable long-term predictions of glucose levels would be valueable. Furthermore, we recognize the need to streamline the data input process for users. Currently, users have to input the data from their glucose monitors in the form of a .csv file uoload.
+
 
 For now, however, we hope that Gluchart will be able to help Aidan--and anybody else in the Davis community and beyond--with adjusting through the challenges of diabetes.
