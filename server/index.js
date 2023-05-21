@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3001
 const api_key = require('/home/api_key.json')['key']
+const init_data = require('/home/init_data.json')
 
 app.use(express.json())
 
@@ -33,9 +34,13 @@ app.post('/score', (req, res) => {
             } else {
             return response.text().then(text => {
                 return res.send(text)
-            });
-        }})
+        });
+    }})
 })
+
+app.get('/init', (req, res) => {
+    return res.json(init_data)
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
