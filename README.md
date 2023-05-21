@@ -39,6 +39,7 @@ To oversimplify, the more dots there are in region A in the graph, the better (r
 
 More on the EGA:
 NHS: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7196876/
+
 Wikipedia: https://en.wikipedia.org/wiki/Clarke_Error_Grid
 
 If we see that most of our values are in Zone A, we will be able to confirm that our prediction fairly accurate.
